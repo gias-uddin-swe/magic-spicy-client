@@ -1,0 +1,19 @@
+.nav-logo h1 {
+  font-size: 45px;
+  font-weight: bold;
+  font-style: italic;
+  color: magenta;
+}
+.nav-item {
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+}
+.nav-item:hover {
+  color: rgb(80, 80, 228);
+  text-decoration: none;
+}
+.menubar {
+  line-height: 50px;
+  /* background-color: aqua; */
+}
