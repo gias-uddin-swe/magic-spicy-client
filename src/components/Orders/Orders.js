@@ -18,7 +18,15 @@ const Orders = () => {
 
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    fetch("http://localhost:5000/placedOrder", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
   };
   return (
     <div className="container">
@@ -43,7 +51,7 @@ const Orders = () => {
           ))}
         </div>
         <div className="col-md-6 col-sm-12 col-lg-6 place-order-area">
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)} className="input-box">
             <h1 className="text-danger">Please Type your Address </h1>
             <input
               className="input-field"

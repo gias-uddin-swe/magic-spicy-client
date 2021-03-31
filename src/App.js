@@ -9,6 +9,7 @@ import Admin from "./components/Admin/Admin";
 import Header from "./components/Header/Header";
 import CheckOut from "./components/CheckOut/CheckOut";
 import { createContext, useState } from "react";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext();
 
@@ -31,18 +32,15 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/orders">
+          <PrivateRoute path="/orders">
             <Orders />
-          </Route>
+          </PrivateRoute>
           <Route path="/checkOut/:id">
             <CheckOut />
           </Route>
-          <Route path="/admin">
+          <PrivateRoute path="/admin">
             <Admin />
-          </Route>
-          {/* <Route path="/manageProduct">
-            <ManageProduct />
-          </Route> */}
+          </PrivateRoute>
           <Route path="/login">
             <Login />
           </Route>
