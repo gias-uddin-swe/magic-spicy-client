@@ -1,0 +1,19 @@
+.login-area {
+  width: 400px;
+  padding: 20px;
+  margin: auto;
+  /* border: 1px solid red; */
+  box-shadow: 2px 5px 8px gray;
+  border-radius: 15px;
+  margin-top: 100px;
+}
+.login-btn img {
+  margin-right: 30px;
+  width: 25px;
+}
+.login-btn {
+  border: none;
+}
+.login-btn:hover {
+  background-color: rgb(58, 58, 211);
+}

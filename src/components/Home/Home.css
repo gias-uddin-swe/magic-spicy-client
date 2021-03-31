@@ -11,3 +11,7 @@
   width: 300px;
   height: 250px;
 }
+.loading-spinner img {
+  width: 100%;
+  margin: auto;
+}

@@ -8,10 +8,20 @@ import Error404 from "./components/Error404/Error404";
 import Admin from "./components/Admin/Admin";
 import Header from "./components/Header/Header";
 import CheckOut from "./components/CheckOut/CheckOut";
+import { createContext, useState } from "react";
+
+export const UserContext = createContext();
 
 function App() {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    userImage: "",
+    loggedIn: false,
+  });
+
   return (
-    <div className="App">
+    <UserContext.Provider value={[user, setUser]} className="App">
       <Router>
         <Header />
         <Switch>
@@ -30,6 +40,9 @@ function App() {
           <Route path="/admin">
             <Admin />
           </Route>
+          {/* <Route path="/manageProduct">
+            <ManageProduct />
+          </Route> */}
           <Route path="/login">
             <Login />
           </Route>
@@ -38,7 +51,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </UserContext.Provider>
   );
 }
 

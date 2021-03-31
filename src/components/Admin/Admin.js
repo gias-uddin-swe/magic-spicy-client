@@ -2,9 +2,16 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useState } from "react";
+import "./Admin.css";
+import { Link } from "react-router-dom";
+import logo1 from "../../icons/grid 1.png";
+import add from "../../icons/plus 1.png";
+import edit from "../../icons/edit 1.png";
+import ManageProduct from "../ManageProduct/ManageProduct";
 
 const Admin = () => {
   const [imageURL, setImageURL] = useState(null);
+
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => {
     const foodInfo = {
@@ -24,7 +31,6 @@ const Admin = () => {
         console.log(data);
       });
 
-    console.log(foodInfo);
   };
 
   const handleImageUpload = (event) => {
@@ -42,25 +48,73 @@ const Admin = () => {
         console.log(error);
       });
   };
+  const [manageFoods, setManageFoods] = useState(false);
+  console.log(manageFoods);
   return (
-    <div>
-      <h1>Admin area </h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input name="name" placeholder="name" ref={register} />
-        <br />
-        <input name="price" placeholder="price" ref={register} />
-        <br />
+    <div className="row">
+      <div className="side-navbar col-md-3 col-sm-4">
+        <Link onClick={() => setManageFoods(true)} className="dashboard-item">
+          <img style={{ width: "25px" }} src={logo1} alt="" /> Manage Product
+        </Link>
+        <Link onClick={() => setManageFoods(false)} className="dashboard-item">
+          <img style={{ width: "25px" }} src={add} alt="" /> Add Product
+        </Link>
+        <Link onClick={() => setManageFoods(true)} className="dashboard-item">
+          <img style={{ width: "25px" }} src={edit} alt="" /> Edit Product
+        </Link>
+      </div>
+      {manageFoods ? (
+        <div className="container col-md-9 col-sm-8">
+          <ManageProduct></ManageProduct>
+        </div>
+      ) : (
+        <div className="content-area col-md-9 col-sm-8 container text-center">
+          <h1 className="text-left text-info">Add Food Item</h1>
+          <div className="container add-food-sub">
+            <div className="container add-food">
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <input
+                  className="input-field"
+                  name="name"
+                  placeholder="name"
+                  ref={register}
+                />
+                <input
+                  className="input-field"
+                  name="price"
+                  placeholder="price"
+                  ref={register}
+                />
+                <br />
+                <input
+                  className="input-field"
+                  name="description"
+                  placeholder="description"
+                  ref={register}
+                />
 
-        <input name="Date" type="date" ref={register} />
-        <br />
+                <input
+                  className="input-field"
+                  name="Date"
+                  type="date"
+                  ref={register}
+                />
 
-        <input name="description" placeholder="description" ref={register} />
-        <br />
-        <input onChange={handleImageUpload} name="file" type="file" />
-        {errors.exampleRequired && <span>This field is required</span>}
-        <br />
-        <input type="submit" />
-      </form>
+                <br />
+                <input
+                  className="input-field"
+                  onChange={handleImageUpload}
+                  name="file"
+                  type="file"
+                />
+                {errors.Required && <span>This field is required</span>}
+                <br />
+                <input className="btn btn-info mt-5" type="submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

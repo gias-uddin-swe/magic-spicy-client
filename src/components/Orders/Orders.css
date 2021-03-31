@@ -1,0 +1,19 @@
+.product-box {
+  border: 1px solid red;
+  padding: 15px;
+  margin-top: 15px;
+}
+.product-img img {
+  width: 200px;
+}
+.place-order-area {
+  width: 100%;
+  margin: auto;
+}
+.place-btn {
+  width: 50%;
+  margin: auto;
+}
+.order-page {
+  margin-top: 50px;
+}

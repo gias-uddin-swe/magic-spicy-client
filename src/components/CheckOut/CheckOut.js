@@ -4,16 +4,41 @@ import { useState } from "react";
 import { Table } from "react-bootstrap";
 import { useParams } from "react-router";
 import "./CheckOut.css";
+import { Link } from "react-router-dom";
+import { UserContext } from "../../App";
+import { useContext } from "react";
 
 const CheckOut = () => {
+  const [user, setUser] = useContext(UserContext);
   const { id } = useParams();
   const [item, setItem] = useState({});
-  console.log(item);
   useEffect(() => {
     fetch(`http://localhost:5000/food/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);
+  const handleUserOrders = () => {
+    const { name, price, description, imageURL } = item;
+    const newUser = {
+      productName: name,
+      productPrice: price,
+      ProductDescription: description,
+      ProductImage: imageURL,
+    };
+    newUser.Username = user.name;
+    newUser.Email = user.email;
+    newUser.Date = new Date();
+    fetch("http://localhost:5000/setOrder", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newUser),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+    console.log(newUser);
+  };
   return (
     <div>
       <div className="container row  review-food">
@@ -42,6 +67,9 @@ const CheckOut = () => {
             </tr>
           </tbody>
         </Table>
+        <Link onClick={handleUserOrders} to="/orders" className="btn btn-info ">
+          CheckOut
+        </Link>
       </div>
     </div>
   );
