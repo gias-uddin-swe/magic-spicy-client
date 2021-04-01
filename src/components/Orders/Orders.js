@@ -11,14 +11,16 @@ const Orders = () => {
   const [ordered, setOrdered] = useState([]);
   console.log(ordered);
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrders?email=` + user.email)
+    fetch(
+      `https://cryptic-oasis-98497.herokuapp.com/myOrders?email=` + user.email
+    )
       .then((res) => res.json())
       .then((data) => setOrdered(data));
   }, []);
 
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/placedOrder", {
+    fetch("https://cryptic-oasis-98497.herokuapp.com/placedOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

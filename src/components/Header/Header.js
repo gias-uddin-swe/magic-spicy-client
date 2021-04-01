@@ -17,7 +17,7 @@ const Header = () => {
       <div className="menubar container col-md-4  col-lg-12">
         <nav className="navbar container">
           <div className="nav-logo col-md-6 col-sm-12">
-            <h1>Spicy Magic</h1>
+            <h1 className="title">Spicy Magic</h1>
           </div>
           <Link className="nav-item" to="/home">
             Home

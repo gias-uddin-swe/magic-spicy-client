@@ -5,12 +5,13 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import loader from "../../icons/loading-spinner.gif";
+import { Form, FormControl, InputGroup, Navbar } from "react-bootstrap";
 
 const Home = () => {
   const [allFoods, setAllFoods] = useState([]);
   const [spinner, setSpinner] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/allFoods")
+    fetch("https://cryptic-oasis-98497.herokuapp.com/allFoods")
       .then((res) => res.json())
       .then((data) => {
         setSpinner(false);
@@ -25,6 +26,25 @@ const Home = () => {
 
   return (
     <div className="container mt-5 pt-5">
+      <div className="row container search-div  ">
+        <Navbar className="bg-light justify-content-between">
+          <Form className="main-form">
+            <InputGroup className="sub-form">
+              <FormControl
+                className="input-box"
+                placeholder="type your favorite"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+              <InputGroup.Prepend>
+                <InputGroup.Text className="search-btn" id="basic-addon1">
+                  Search
+                </InputGroup.Text>
+              </InputGroup.Prepend>
+            </InputGroup>
+          </Form>
+        </Navbar>
+      </div>
       {spinner ? (
         <div className="container loading-spinner">
           <img src={loader} alt="" />

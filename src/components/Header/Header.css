@@ -17,3 +17,6 @@
   line-height: 50px;
   /* background-color: aqua; */
 }
+.title::first-letter {
+  font-size: 200%;
+}

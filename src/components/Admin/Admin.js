@@ -21,7 +21,7 @@ const Admin = () => {
       price: data.price,
       description: data.description,
     };
-    fetch("http://localhost:5000/addFood", {
+    fetch("https://cryptic-oasis-98497.herokuapp.com/addFood", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(foodInfo),
@@ -30,7 +30,6 @@ const Admin = () => {
       .then((data) => {
         console.log(data);
       });
-
   };
 
   const handleImageUpload = (event) => {
@@ -109,7 +108,12 @@ const Admin = () => {
                 />
                 {errors.Required && <span>This field is required</span>}
                 <br />
-                <input className="btn btn-info mt-5" type="submit" />
+
+                <input
+                  className="btn btn-info mt-5"
+                  type="submit"
+                  value="Add Food"
+                />
               </form>
             </div>
           </div>

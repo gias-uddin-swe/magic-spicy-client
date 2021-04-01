@@ -10,13 +10,13 @@ const ManageProduct = () => {
   const [allFoods, setAllFoods] = useState([]);
   console.log(allFoods);
   useEffect(() => {
-    fetch("http://localhost:5000/allFoods")
+    fetch("https://cryptic-oasis-98497.herokuapp.com/allFoods")
       .then((res) => res.json())
       .then((data) => setAllFoods(data));
   }, []);
 
   const handleDeleteFood = (id) => {
-    fetch(`http://localhost:5000/delete/${id}`, {
+    fetch(`https://cryptic-oasis-98497.herokuapp.com/delete/${id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     })

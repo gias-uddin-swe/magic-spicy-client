@@ -13,7 +13,7 @@ const CheckOut = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/food/${id}`)
+    fetch(`https://cryptic-oasis-98497.herokuapp.com/food/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);
@@ -28,7 +28,7 @@ const CheckOut = () => {
     newUser.Username = user.name;
     newUser.Email = user.email;
     newUser.Date = new Date();
-    fetch("http://localhost:5000/setOrder", {
+    fetch("https://cryptic-oasis-98497.herokuapp.com/setOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
