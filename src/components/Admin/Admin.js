@@ -8,6 +8,7 @@ import logo1 from "../../icons/grid 1.png";
 import add from "../../icons/plus 1.png";
 import edit from "../../icons/edit 1.png";
 import ManageProduct from "../ManageProduct/ManageProduct";
+import upload from "../../icons/cloud-upload-outline 1.png";
 
 const Admin = () => {
   const [imageURL, setImageURL] = useState(null);
@@ -100,11 +101,15 @@ const Admin = () => {
                 />
 
                 <br />
+                <label className="upload-file" htmlFor="uploadImage">
+                  <img src={upload} alt="" /> Upload image
+                </label>
                 <input
                   className="input-field"
                   onChange={handleImageUpload}
                   name="file"
                   type="file"
+                  id="uploadImage"
                 />
                 {errors.Required && <span>This field is required</span>}
                 <br />

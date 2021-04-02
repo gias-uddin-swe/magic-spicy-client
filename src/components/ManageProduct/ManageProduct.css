@@ -22,3 +22,12 @@ tr:nth-child(even) {
 .edit-btn img {
   width: 25px;
 }
+.loading-div {
+  width: 100%;
+  margin: auto;
+}
+.loading-div img{
+width: 100%;
+margin: auto;
+text-align: center
+}

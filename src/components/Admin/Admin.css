@@ -50,3 +50,22 @@
 .dashboard-item:hover {
   color: rgb(9, 231, 231);
 }
+
+.upload-file {
+  margin-top: 20px;
+  padding: 8px 15px;
+  /* background-image: linear-gradient(45deg, cyan, magenta, lightblue); */
+  background-color: rgb(170, 219, 203);
+  text-shadow: 2px 2px 2px 4px rgb(164, 214, 212);
+  border: 1px solid rgb(1, 122, 116);
+  border-top: 2px solid rgb(1, 122, 116);
+  font-size: 18px;
+  /* color: white; */
+  border-radius: 10px;
+}
+.upload-file img {
+  width: 20px;
+}
+#uploadImage {
+  display: none;
+}

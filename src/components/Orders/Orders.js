@@ -113,13 +113,12 @@ const Orders = () => {
             />
 
             <br />
-
-            <br />
             <input
               className="btn btn-info pl-5 pr-5 place-btn"
               type="submit"
               value="Place Order"
             />
+            <br />
           </form>
         </div>
       </div>
