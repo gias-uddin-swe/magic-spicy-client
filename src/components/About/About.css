@@ -1,0 +1,62 @@
+.header {
+  background-image: url("https://i.ibb.co/smpBhrN/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  padding: 80px 50px;
+}
+.header-title {
+  margin-top: 30px;
+  font-size: 58px;
+  font-style: italic;
+  font-weight: 500;
+  color: white;
+}
+.header-description {
+  font-size: 18px;
+  color: #fff;
+}
+.header-btn {
+  margin-top: 20px;
+}
+.second-sendtion {
+  width: 100%;
+  margin: auto;
+  margin-top: 50px;
+}
+.second-sendtion-title {
+  margin-bottom: 40px;
+}
+.second-sendtion-title::first-letter {
+  font-size: 200%;
+  color: #ec1354;
+}
+.second-sendtion-desc {
+  font-size: 16px;
+  text-align: justify;
+}
+.second-section-img {
+  margin-top: 60px;
+  text-align: right;
+}
+.second-section-img img {
+  width: 100%;
+  margin: auto;
+  margin-left: 30px;
+}
+.third-section-title {
+  font-size: 38px;
+}
+.third-section-title::first-letter {
+  font-size: 200%;
+}
+.third-section-title::nth-letter {
+  font-size: 200%;
+}
+.third-section-desc {
+  margin-bottom: 80px;
+}
+.expert img {
+  width: 100%;
+  border-radius: 5px;
+}

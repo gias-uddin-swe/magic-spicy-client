@@ -10,6 +10,7 @@ import Header from "./components/Header/Header";
 import CheckOut from "./components/CheckOut/CheckOut";
 import { createContext, useState } from "react";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import About from "./components/About/About";
 
 export const UserContext = createContext();
 
@@ -35,14 +36,17 @@ function App() {
           <PrivateRoute path="/orders">
             <Orders />
           </PrivateRoute>
-          <Route path="/checkOut/:id">
+          <PrivateRoute path="/checkOut/:id">
             <CheckOut />
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/admin">
             <Admin />
           </PrivateRoute>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="*">
             <Error404 />
