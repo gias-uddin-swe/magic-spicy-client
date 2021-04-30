@@ -5,6 +5,16 @@ have a look the live preview  [Click hear to Check Live Site](https://spicy-magi
 You can also take a look my Server Site Repository [click hear to check Server site Repository](https://github.com/Porgramming-Hero-web-course/full-stack-server-gias-uddin-swe).
 
 
+# key Features
+
+This is a full-stack restaurant food delivery website. 
+
+ Users can order food and give a review for each food and restaurant. 
+
+ Have admin dashboard and user dashboard. 
+
+ Admin can delete, add, manage services. 
+
 ## Features
 
 1. React app all Features available 
